@@ -38,3 +38,7 @@ override.tf.json
 !.vscode/tasks.json
 !.vscode/launch.json
 *.code-workspace
+
+# IntelliJ IDEA ###
+.idea
+

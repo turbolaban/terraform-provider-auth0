@@ -41,7 +41,7 @@ func flattenTenantFlags(flags *management.TenantFlags) []interface{} {
 		m["enable_custom_domain_in_emails"] = flags.EnableCustomDomainInEmails
 		m["universal_login"] = flags.UniversalLogin
 		m["enable_legacy_logs_search_v2"] = flags.EnableLegacyLogsSearchV2
-		m["disable_clickjack_protection_headers"] = flags.DisableClickjackProtectionHeaders
+		//m["disable_clickjack_protection_headers"] = flags.DisableClickjackProtectionHeaders
 		m["enable_public_signup_user_exists_error"] = flags.EnablePublicSignupUserExistsError
 		m["use_scope_descriptions_for_consent"] = flags.UseScopeDescriptionsForConsent
 	}
@@ -95,15 +95,15 @@ func expandTenantErrorPage(d ResourceData) (errorPage *management.TenantErrorPag
 func expandTenantFlags(d ResourceData) (flags *management.TenantFlags) {
 	List(d, "flags").Elem(func(d ResourceData) {
 		flags = &management.TenantFlags{
-			ChangePasswordFlowV1:              Bool(d, "change_pwd_flow_v1"),
-			EnableClientConnections:           Bool(d, "enable_client_connections"),
-			EnableAPIsSection:                 Bool(d, "enable_apis_section"),
-			EnablePipeline2:                   Bool(d, "enable_pipeline2"),
-			EnableDynamicClientRegistration:   Bool(d, "enable_dynamic_client_registration"),
-			EnableCustomDomainInEmails:        Bool(d, "enable_custom_domain_in_emails"),
-			UniversalLogin:                    Bool(d, "universal_login"),
-			EnableLegacyLogsSearchV2:          Bool(d, "enable_legacy_logs_search_v2"),
-			DisableClickjackProtectionHeaders: Bool(d, "disable_clickjack_protection_headers"),
+			ChangePasswordFlowV1:            Bool(d, "change_pwd_flow_v1"),
+			EnableClientConnections:         Bool(d, "enable_client_connections"),
+			EnableAPIsSection:               Bool(d, "enable_apis_section"),
+			EnablePipeline2:                 Bool(d, "enable_pipeline2"),
+			EnableDynamicClientRegistration: Bool(d, "enable_dynamic_client_registration"),
+			EnableCustomDomainInEmails:      Bool(d, "enable_custom_domain_in_emails"),
+			UniversalLogin:                  Bool(d, "universal_login"),
+			EnableLegacyLogsSearchV2:        Bool(d, "enable_legacy_logs_search_v2"),
+			//DisableClickjackProtectionHeaders: Bool(d, "disable_clickjack_protection_headers"),
 			EnablePublicSignupUserExistsError: Bool(d, "enable_public_signup_user_exists_error"),
 			UseScopeDescriptionsForConsent:    Bool(d, "use_scope_descriptions_for_consent"),
 		}
